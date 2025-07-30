@@ -35,23 +35,20 @@ namespace SimulationGame
                         Console.WriteLine(player.move());
                         break;
 
+                    case ConsoleKey.O:
+                        player.GetOff();
+                        break;
+
                     default:
-                        if (keyChar == "o")
+                        var vehicle = _vehicleFactory.CreateVehicle(keyChar);
+                        if (vehicle != null)
                         {
-                            player.GetOff();
+                            _vehicleFactory.CreateVehicle(keyChar);
+                            player.GetIn(vehicle);
                         }
                         else
                         {
-                            var vehicle = _vehicleFactory.CreateVehicle(keyChar);
-                            if (vehicle!=null)
-                            {
-                                _vehicleFactory.CreateVehicle(keyChar);
-                                player.GetIn(vehicle);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid key.");
-                            }
+                            Console.WriteLine("Invalid key.");
                         }
                         break;
                 }
