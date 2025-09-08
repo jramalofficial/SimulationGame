@@ -23,7 +23,7 @@ namespace SimulationGame
         {
             if (vehicle == this)
             {
-                return "Player is walking";
+                return "Player walking";
             }
             return vehicle.move();
         }
