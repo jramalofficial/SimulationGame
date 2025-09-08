@@ -21,7 +21,7 @@ namespace SimulationGame
         public void StartGame()
         {
             var player = new Player();
-            Console.WriteLine("\nChoose your vehicle: c = Car, b = Bus, o= get out from the vehicle");
+            Console.WriteLine("\nChoose your vehicle: c = Car, b = Bus, o= get out of the vehicle");
 
             while (true)
             {
